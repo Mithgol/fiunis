@@ -1,0 +1,13 @@
+{
+"name": "fiunis",
+"main": "fiunis.js",
+"version": "0.0.1",
+"description": "A renderer of Fidonet Unicode strings.",
+"keywords": ["Fidonet", "Fido", "Unicode", "UTF-7", "UTF-8", "UTF7", "UTF8"],
+"author": { "name": "Mithgol the Webmaster" },
+"license": "MIT",
+"repository": {
+   "type": "git",
+   "url": "https://github.com/Mithgol/fiunis.git"
+}
+}
