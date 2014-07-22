@@ -1,1 +1,5 @@
-console.log('Initial piece of the Fiunis module.');
+var Fiunis = function(){
+   if (!(this instanceof Fiunis)) return new Fiunis();
+};
+
+module.exports = new Fiunis();
