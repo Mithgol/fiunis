@@ -1,4 +1,4 @@
-This Node.js module is a renderer of <b>Fi</b>donet <b>Uni</b>code <b>s</b>trings.
+This Node.js module is a decoder of <b>Fi</b>donet <b>Uni</b>code <b>s</b>trings.
 
 It is called **Fiunis** after a hangman's pun “finis coronat opus” → “funis coronat opus” that appeared in Walter Scott's “[Quentin Durward](http://en.wikipedia.org/wiki/Quentin_Durward)” in 1823.
 
