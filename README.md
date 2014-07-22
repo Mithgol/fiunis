@@ -14,6 +14,16 @@ The npm package does not contain the tests, they're published on GitHub only.
 
 You may visit https://github.com/Mithgol/fiunis#readme occasionally to read the latest `README` because the package's version is not planned to grow after changes when they happen in `README` only. (And `npm publish --force` is [forbidden](http://blog.npmjs.org/post/77758351673/no-more-npm-publish-f) nowadays.)
 
+## Using Fiunis
+
+When you `require()` the installed module, you get an object that has the following method:
+
+### decode(text)
+
+Replaces all occurrences of Fidonet Unicode strings in the given text by their decoded Unicode equivalents.
+
+For example, `.decode('The video “&+mAJcFlwNbHpOS3p/iTJbUHvH;” is interesting.')` returns `'The video “頂尖對決之穿褲子篇” is interesting.'`.
+
 ## Testing Fiunis
 
 [![(build testing status)](https://travis-ci.org/Mithgol/fiunis.svg?branch=master)](https://travis-ci.org/Mithgol/fiunis)
