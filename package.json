@@ -9,5 +9,9 @@
 "repository": {
    "type": "git",
    "url": "https://github.com/Mithgol/fiunis.git"
+},
+"scripts": {
+   "pretest": "jshint fiunis.js test/",
+   "test": "mocha --reporter spec --timeout 60s"
 }
 }
