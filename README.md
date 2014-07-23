@@ -2,6 +2,14 @@ This Node.js module is a decoder of <b>Fi</b>donet <b>Uni</b>code <b>s</b>ubst
 
 It is called **Fiunis** after a hangman's pun “finis coronat opus” → “funis coronat opus” that appeared in Walter Scott's “[Quentin Durward](http://en.wikipedia.org/wiki/Quentin_Durward)” in 1823. (The word “string” sometimes also has the meaning “rope” or “cord”, equivalent to the Latin “funis”.)
 
+This repository does also contain draft standards of **Fidonet Unicode substrings** for the Fidonet Global Hypertext Interface project.
+
+* The [`fiunis.txt`](fiunis.txt) file is the English version of the draft.
+
+* The [`fiunis.rus.txt`](fiunis.rus.txt) file is the Russian version of the draft. This version is provided in UTF-8 (for the diffs to look reasonably good on GitHub and other git tools) and thus should be converted to CP866 encoding (common in Russian Fidonet) before posting to Fidonet.
+
+This module is a reference implementation of these standards, though partial (it implements only the decoder, not the encoder).
+
 ## Installing Fiunis
 
 [![(npm package version)](https://nodei.co/npm/fiunis.png?downloads=true)](https://npmjs.org/package/fiunis) [![(a histogram of downloads)](https://nodei.co/npm-dl/fiunis.png?months=3)](https://npmjs.org/package/fiunis)
@@ -40,4 +48,6 @@ After that you may run `npm test` (in the directory of Fiunis).
 
 ## License
 
-MIT license (see the `LICENSE` file).
+Distribution of the standards of Fidonet Unicode substrings is unlimited (see section 1), provided that the text is not altered without notice.
+
+The rest of the repository is MIT-licensed (see the `LICENSE` file).
