@@ -1,4 +1,4 @@
-This Node.js module is a decoder of <b>Fi</b>donet <b>Uni</b>code <b>s</b>trings.
+This Node.js module is a decoder of <b>Fi</b>donet <b>Uni</b>code <b>s</b>ubtrings.
 
 It is called **Fiunis** after a hangman's pun “finis coronat opus” → “funis coronat opus” that appeared in Walter Scott's “[Quentin Durward](http://en.wikipedia.org/wiki/Quentin_Durward)” in 1823. (The word “string” sometimes also has the meaning “rope” or “cord”, equivalent to the Latin “funis”.)
 
@@ -20,7 +20,7 @@ When you `require()` the installed module, you get an object that has the f
 
 ### decode(text)
 
-Replaces all occurrences of Fidonet Unicode strings in the given text by their decoded Unicode equivalents.
+Replaces all occurrences of Fidonet Unicode substrings in the given text by their decoded Unicode equivalents.
 
 For example, `.decode('The video “&+mAJcFlwNbHpOS3p/iTJbUHvH;” is interesting.')` returns `'The video “頂尖對決之穿褲子篇” is interesting.'`.
 
