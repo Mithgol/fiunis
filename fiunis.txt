@@ -77,7 +77,41 @@ Contents:
 4. 8-bit encoding of a Fidonet message containing Unicode substrings
 -+------------------------------------------------------------------
 
-  
+  First of all, the source (Unicode) text is split into an array of
+  substrings following each other (successively), where the substrings
+  that have even indices (0, 2, 4...) contain characters that can be
+  encoded with the target encoding and the substrings that have odd
+  indices (1, 3, 5...) contain characters that cannot be encoded with
+  the target encoding. (Or vice versa; if a character that cannot be
+  encoded with the target encoding appeared first, then its substring
+  has zeroeth index, and all such substrings also have even indices.)
+
+  The traditional 8-bit encoding is performed for the substrings that
+  contain characters that can be encoded that way, i.e. each of such
+  characters is represented by a byte.
+
+  The other substrings ("Unicode substrings") are converted to the
+  UTF-7 format (RFC 2152). For example, a string that consists of
+  Unicode characters U+9802, U+5C16, U+5C0D, U+6C7A, U+4E4B, U+7A7F,
+  U+8932, U+5B50, U+7BC7 is represented by the following string:
+
+        +mAJcFlwNbHpOS3p/iTJbUHvH-
+
+  However, the UTF-7 method of escaping (a plus before such string and
+  a minus after) is not sufficient for Fidonet. Thus the minus MUST be
+  replaced by a semicolon, the plus MUST be prepended by an ampersand.
+  For example, a string that consists of Unicode characters U+9802,
+  U+5C16, U+5C0D, U+6C7A, U+4E4B, U+7A7F, U+8932, U+5B50, U+7BC7 is
+  represented by the following string:
+
+        &+mAJcFlwNbHpOS3p/iTJbUHvH;
+
+  Afterwards the traditional 8-but encoding is performed for these
+  (ASCII-compatible) characters.
+
+  The encoding results are concatenated (successively) in the order
+  that substrings had in the initial array (i.e. in the order of
+  their appearance in the source text).
 
 5. Decoding of an 8-bit Fidonet message containing Unicode substrings
 -+-------------------------------------------------------------------
