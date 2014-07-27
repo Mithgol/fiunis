@@ -116,7 +116,25 @@ Contents:
 5. Decoding of an 8-bit Fidonet message containing Unicode substrings
 -+-------------------------------------------------------------------
 
-  
+  First of all, the message is decoded by a traditional 8-bit decoder,
+  each byte is decoded to a character.
+
+  Encoded Unicode substrings are then found in the message (using
+  their unique form: an ampersand, then a plus, then one or more of
+  base64 characters, then a semicolon) and replaced by their decoded
+  equivalents.
+
+  For finding that encoded forms, the following PECL (Perl-compatible
+  regular expression) might be useful:
+
+      /&\+[A-Za-z01-9+\/]+;/
+
+  For decoding them, some RFC2152-compatible UTF-7 decoder MUST be
+  used. (As explained in the previous section, Fidonet Unicode
+  substrings use UTF-7 encoding and a different escaping. If the
+  decoder expects RFC2152-compatible escaping, the ampersand MUST be
+  removed and the semicolon MUST be replaced by a minus before the
+  substring is given to the decoder.)
 
 **********************************************************************
 EOTD                                               END OF THE DOCUMENT
