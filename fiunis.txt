@@ -5,7 +5,7 @@ Status:         draft
 Revision:       initial incomplete draft
 Title:          Fidonet Unicode substrings
 Author:         Mithgol the Webmaster   (aka Sergey Sokoloff, 2:50/88)
-Revision Date:  23 Jul 2014
+Revision Date:  28 Jul 2014
 -+--------------------------------------------------------------------
 Contents:
    1. Status of this document
@@ -15,6 +15,7 @@ Contents:
       containing Unicode substrings
    5. Decoding of an 8-bit Fidonet message
       containing Unicode substrings
+   6. Important notes
 -+--------------------------------------------------------------------
 
 1. Status of this document
@@ -135,6 +136,11 @@ Contents:
   decoder expects RFC2152-compatible escaping, the ampersand MUST be
   removed and the semicolon MUST be replaced by a minus before the
   substring is given to the decoder.)
+
+6. Important notes
+-+----------------
+
+  
 
 **********************************************************************
 EOTD                                               END OF THE DOCUMENT
