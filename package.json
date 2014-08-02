@@ -2,8 +2,11 @@
 "name": "fiunis",
 "main": "fiunis.js",
 "version": "1.0.0",
-"description": "A decoder of Fidonet Unicode substrings.",
-"keywords": ["Fidonet", "Fido", "Unicode", "UTF-7", "UTF-8", "UTF7", "UTF8"],
+"description": "A decoder and an encoder of Fidonet Unicode substrings.",
+"keywords": [
+   "Fidonet", "Fido",
+   "Unicode", "UTF-7", "UTF-8", "UTF-16", "UTF7", "UTF8", "UTF16"
+],
 "author": { "name": "Mithgol the Webmaster" },
 "license": "MIT",
 "repository": {
