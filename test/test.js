@@ -28,8 +28,8 @@ describe("Fidonet Unicode strings' decoder", function(){
 });
 
 describe("Fidonet Unicode strings' encoder", function(){
-   it('leaves some simple text untouched', function(){
-      assert.strictEqual(
+   it('does not leave even simple text untouched', function(){
+      assert.notStrictEqual(
          Fiunis.encode(lorem),
          lorem
       );
@@ -38,11 +38,9 @@ describe("Fidonet Unicode strings' encoder", function(){
    function(){
       assert.strictEqual(
          Fiunis.encode(
-            'The video ' +
-            '\u9802\u5C16\u5C0D\u6C7A\u4E4B\u7A7F\u8932\u5B50\u7BC7' +
-            ' is interesting.'
+            '\u9802\u5C16\u5C0D\u6C7A\u4E4B\u7A7F\u8932\u5B50\u7BC7'
          ),
-         'The video &+mAJcFlwNbHpOS3p/iTJbUHvH; is interesting.'
+         '&+mAJcFlwNbHpOS3p/iTJbUHvH;'
       );
    });
 });
