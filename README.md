@@ -24,13 +24,21 @@ You may visit https://github.com/Mithgol/fiunis#readme occasionally to read the
 
 ## Using Fiunis
 
-When you `require()` the installed module, you get an object that has the following method:
+When you `require()` the installed module, you get an object that has the following methods:
 
 ### decode(text)
 
 Replaces all occurrences of Fidonet Unicode substrings in the given text by their decoded Unicode equivalents.
 
 For example, `.decode('The video “&+mAJcFlwNbHpOS3p/iTJbUHvH;” is interesting.')` returns `'The video “頂尖對決之穿褲子篇” is interesting.'`.
+
+### encode(text)
+
+Returns the Fidonet Unicode substring equivalent of the given text.
+
+For example, `.encode('頂尖對決之穿褲子篇')` returns `'&+mAJcFlwNbHpOS3p/iTJbUHvH;'`.
+
+Any given text is converted (including ASCII characters). You should detect (beforehand) which substrings should be given to this encoder and what other substrings would be left to a traditional 8-bit encoding.
 
 ## Testing Fiunis
 
