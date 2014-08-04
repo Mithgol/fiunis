@@ -140,7 +140,14 @@ Contents:
 6. Important notes
 -+----------------
 
-  
+  Note 1. An ampersand, a semicolon, a plus and some of base64 codes
+  (for example, capital Latin letters) might appear in UUE code blocks
+  in Fidonet. If a Fidonet message reader interpretes UUE codes, then
+  it MUST isolate and decode UUE before it applies the decoder of
+  Fidonet Unicode substrings to the rest of the message. If a Fidonet
+  message reader does not interprete UUE codes (i.e. just presents UUE
+  as a big lump of human-unreadable codes), it MAY not care if some of
+  these codes end up converted to Unicode substrings.
 
 **********************************************************************
 EOTD                                               END OF THE DOCUMENT
