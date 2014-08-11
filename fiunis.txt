@@ -149,6 +149,24 @@ Contents:
   as a big lump of human-unreadable codes), it MAY not care if some of
   these codes end up converted to Unicode substrings.
 
+  Note 2. Fidonet Unicode substrings MAY appear in source message even
+  before it is encoded (for example, when Fidonet Unicode substrings
+  are discussed). An encoder of Fidonet Unicode substrings SHOULD be
+  applied to them (so that their original form is restored after the
+  decoding; otherwise such substrings would be decoded to their
+  Unicode equivalents). Keep in mind the following:
+
+  2.1) Such second level of encoding MUST NOT be applied to Fidonet
+       Unicode susbtrings when they (accidentally) are generated in
+       UUE blocks. Otherwise UUE decoding in older Fidonet message
+       readers (that doe not know anyting about Fidonet Unicode
+       substrings) becomes prevented.
+
+  2.2) Fidonet Unicode substrings of the source message MAY be left
+       untouched by the decoder for the sake of users of older Fidonet
+       message readers (otherwise Fidonet Unicode substrings, decoded
+       twice, become even more incomprehensible for them).
+
 **********************************************************************
 EOTD                                               END OF THE DOCUMENT
 **********************************************************************
