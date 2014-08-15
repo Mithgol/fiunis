@@ -5,7 +5,7 @@ Status:         draft
 Revision:       initial incomplete draft
 Title:          Fidonet Unicode substrings
 Author:         Mithgol the Webmaster   (aka Sergey Sokoloff, 2:50/88)
-Revision Date:  28 Jul 2014
+Revision Date:  16 Aug 2014
 -+--------------------------------------------------------------------
 Contents:
    1. Status of this document
