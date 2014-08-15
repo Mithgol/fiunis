@@ -159,12 +159,12 @@ Contents:
   2.1) Such second level of encoding MUST NOT be applied to Fidonet
        Unicode susbtrings when they (accidentally) are generated in
        UUE blocks. Otherwise UUE decoding in older Fidonet message
-       readers (that doe not know anyting about Fidonet Unicode
+       readers (that do not know anything about Fidonet Unicode
        substrings) becomes prevented.
 
   2.2) Fidonet Unicode substrings of the source message MAY be left
        untouched by the decoder for the sake of users of older Fidonet
-       message readers (otherwise Fidonet Unicode substrings, decoded
+       message readers (otherwise Fidonet Unicode substrings, encoded
        twice, become even more incomprehensible for them).
 
 **********************************************************************
