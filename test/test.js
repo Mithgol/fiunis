@@ -25,6 +25,12 @@ describe("Fidonet Unicode strings' decoder", function(){
          ' небезынтересен.'
       );
    });
+   it('decodes "буки"', function(){
+      assert.strictEqual(
+         Fiunis.decode('&+BDEEQwQ6BDg;'),
+         'буки'
+      );
+   });
 });
 
 describe("Fidonet Unicode strings' encoder", function(){
@@ -41,6 +47,12 @@ describe("Fidonet Unicode strings' encoder", function(){
             '\u9802\u5C16\u5C0D\u6C7A\u4E4B\u7A7F\u8932\u5B50\u7BC7'
          ),
          '&+mAJcFlwNbHpOS3p/iTJbUHvH;'
+      );
+   });
+   it('encodes "буки"', function(){
+      assert.strictEqual(
+         Fiunis.encode('буки'),
+         '&+BDEEQwQ6BDg;'
       );
    });
 });

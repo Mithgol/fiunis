@@ -20,7 +20,7 @@ Fiunis.prototype.encode = function(text){
    var base64string = Buffer(text, 'utf16be').toString('base64');
    while(
       base64string.length > 0 &&
-      base64string.charAt(base64string.length) === '='
+      base64string.charAt(base64string.length - 1) === '='
    ){
       base64string = base64string.slice(0, -1);
    }
