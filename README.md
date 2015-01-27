@@ -42,7 +42,7 @@ Any given text is converted (including ASCII characters). You should detect (be
 
 ## Testing Fiunis
 
-[![(build testing status)](https://travis-ci.org/Mithgol/fiunis.svg?branch=master)](https://travis-ci.org/Mithgol/fiunis)
+[![(build testing status)](https://img.shields.io/travis/Mithgol/fiunis/master.svg?style=plastic)](https://travis-ci.org/Mithgol/fiunis)
 
 The tests are not included in the npm package of the module (to keep it small). Use the version from GitHub.
 
