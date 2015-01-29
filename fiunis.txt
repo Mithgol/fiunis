@@ -2,10 +2,10 @@
 FGHI                                FIDONET GLOBAL HYPERTEXT INTERFACE
 **********************************************************************
 Status:         draft
-Revision:       initial complete draft
+Revision:       draft 2.0
 Title:          Fidonet Unicode substrings
 Author:         Mithgol the Webmaster   (aka Sergey Sokoloff, 2:50/88)
-Revision Date:  16 Aug 2014
+Revision Date:  29 Jan 2015
 -+--------------------------------------------------------------------
 Contents:
    1. Status of this document
@@ -100,12 +100,12 @@ Contents:
 
   However, the UTF-7 method of escaping (a plus before such string and
   a minus after) is not sufficient for Fidonet. Thus the minus MUST be
-  replaced by a semicolon, the plus MUST be prepended by an ampersand.
+  followed by a semicolon, the plus MUST be prepended by an ampersand.
   For example, a string that consists of Unicode characters U+9802,
   U+5C16, U+5C0D, U+6C7A, U+4E4B, U+7A7F, U+8932, U+5B50, U+7BC7 is
   represented by the following string:
 
-        &+mAJcFlwNbHpOS3p/iTJbUHvH;
+        &+mAJcFlwNbHpOS3p/iTJbUHvH-;
 
   Afterwards the traditional 8-but encoding is performed for these
   (ASCII-compatible) characters.
@@ -122,32 +122,32 @@ Contents:
 
   Encoded Unicode substrings are then found in the message (using
   their unique form: an ampersand, then a plus, then one or more of
-  base64 characters, then a semicolon) and replaced by their decoded
-  equivalents.
+  base64 characters, then a minus and a semicolon) and replaced by
+  their decoded equivalents.
 
   For finding that encoded forms, the following PECL (Perl-compatible
   regular expression) might be useful:
 
-      /&\+[A-Za-z01-9+\/]+;/
+      /&\+[A-Za-z0-9+/]+-;/
 
   For decoding them, some RFC2152-compatible UTF-7 decoder MUST be
   used. (As explained in the previous section, Fidonet Unicode
   substrings use UTF-7 encoding and a different escaping. If the
-  decoder expects RFC2152-compatible escaping, the ampersand MUST be
-  removed and the semicolon MUST be replaced by a minus before the
-  substring is given to the decoder.)
+  decoder expects RFC2152-compatible escaping, the ampersand before
+  the substring and the semicolon after the substring MUST be removed
+  before the substring is given to the decoder.)
 
 6. Important notes
 -+----------------
 
-  Note 1. An ampersand, a semicolon, a plus and some of base64 codes
-  (for example, capital Latin letters) might appear in UUE code blocks
-  in Fidonet. If a Fidonet message reader interpretes UUE codes, then
-  it MUST isolate and decode UUE before it applies the decoder of
-  Fidonet Unicode substrings to the rest of the message. If a Fidonet
-  message reader does not interprete UUE codes (i.e. just presents UUE
-  as a big lump of human-unreadable codes), it MAY not care if some of
-  these codes end up converted to Unicode substrings.
+  Note 1. An ampersand, a semicolon, a plus, a minus and some of
+  base64 codes (for example, capital Latin letters) might appear in
+  UUE code blocks in Fidonet. If a Fidonet message reader interpretes
+  UUE codes, then it MUST isolate and decode UUE before it applies the
+  decoder of Fidonet Unicode substrings to the rest of the message. If
+  a Fidonet message reader does not interprete UUE codes (i.e. just
+  presents UUE as a big lump of human-unreadable codes), it MAY not
+  care if some of these codes end up converted to Unicode substrings.
 
   Note 2. Fidonet Unicode substrings MAY appear in source message even
   before it is encoded (for example, when Fidonet Unicode substrings

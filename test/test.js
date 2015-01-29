@@ -18,7 +18,7 @@ describe("Fidonet Unicode strings' decoder", function(){
    function(){
       assert.strictEqual(
          Fiunis.decode(
-            'Видеоролик &+mAJcFlwNbHpOS3p/iTJbUHvH; небезынтересен.'
+            'Видеоролик &+mAJcFlwNbHpOS3p/iTJbUHvH-; небезынтересен.'
          ),
          'Видеоролик ' +
          '\u9802\u5C16\u5C0D\u6C7A\u4E4B\u7A7F\u8932\u5B50\u7BC7' +
@@ -27,7 +27,7 @@ describe("Fidonet Unicode strings' decoder", function(){
    });
    it('decodes "буки"', function(){
       assert.strictEqual(
-         Fiunis.decode('&+BDEEQwQ6BDg;'),
+         Fiunis.decode('&+BDEEQwQ6BDg-;'),
          'буки'
       );
    });
@@ -46,13 +46,13 @@ describe("Fidonet Unicode strings' encoder", function(){
          Fiunis.encode(
             '\u9802\u5C16\u5C0D\u6C7A\u4E4B\u7A7F\u8932\u5B50\u7BC7'
          ),
-         '&+mAJcFlwNbHpOS3p/iTJbUHvH;'
+         '&+mAJcFlwNbHpOS3p/iTJbUHvH-;'
       );
    });
    it('encodes "буки"', function(){
       assert.strictEqual(
          Fiunis.encode('буки'),
-         '&+BDEEQwQ6BDg;'
+         '&+BDEEQwQ6BDg-;'
       );
    });
 });

@@ -30,13 +30,13 @@ When you `require()` the installed module, you get an object that has the f
 
 Replaces all occurrences of Fidonet Unicode substrings in the given text by their decoded Unicode equivalents.
 
-For example, `.decode('The video “&+mAJcFlwNbHpOS3p/iTJbUHvH;” is interesting.')` returns `'The video “頂尖對決之穿褲子篇” is interesting.'`.
+For example, `.decode('The video “&+mAJcFlwNbHpOS3p/iTJbUHvH-;” is interesting.')` returns `'The video “頂尖對決之穿褲子篇” is interesting.'`.
 
 ### encode(text)
 
 Returns the Fidonet Unicode substring equivalent of the given text.
 
-For example, `.encode('頂尖對決之穿褲子篇')` returns `'&+mAJcFlwNbHpOS3p/iTJbUHvH;'`.
+For example, `.encode('頂尖對決之穿褲子篇')` returns `'&+mAJcFlwNbHpOS3p/iTJbUHvH-;'`.
 
 Any given text is converted (including ASCII characters). You should detect (beforehand) which substrings should be given to this encoder and what other substrings would be left to a traditional 8-bit encoding.
 
@@ -53,6 +53,10 @@ It is necessary to install [Mocha](http://visionmedia.github.io/mocha/) and [JSH
 * You may install JSHint globally (`npm install jshint -g`) or locally (`npm install jshint` in the directory of Fiunis).
 
 After that you may run `npm test` (in the directory of Fiunis).
+
+## Notable breaking changes
+
+A stronger escaping method is applied in version 2.0 [(see #1).](https://github.com/Mithgol/fiunis/issues/1) Fidonet Unicode substrings are now ended by `-;` instead of former `;`.
 
 ## License
 
