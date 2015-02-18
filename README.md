@@ -1,4 +1,4 @@
-This Node.js module is a decoder and an encoder of <b>Fi</b>donet <b>Uni</b>code <b>s</b>ubstrings.
+This module is a decoder and an encoder of <b>Fi</b>donet <b>Uni</b>code <b>s</b>ubstrings.
 
 It is called **Fiunis** after a hangman's pun “finis coronat opus” → “funis coronat opus” that appeared in Walter Scott's “[Quentin Durward](http://en.wikipedia.org/wiki/Quentin_Durward)” in 1823. (The word “string” sometimes also has the meaning “rope” or “cord”, equivalent to the Latin “funis”.)
 
@@ -8,7 +8,9 @@ This repository does also contain draft standards of **Fidonet Unicode substring
 
 * The [`fiunis.rus.txt`](fiunis.rus.txt) file is the Russian version of the draft. This version is provided in UTF-8 (for the diffs to look reasonably good on GitHub and other git tools) and thus should be converted to CP866 encoding (common in Russian Fidonet) before posting to Fidonet.
 
-This module is a reference implementation of these standards, though partial (it implements only the decoder, not the encoder).
+This module is a reference implementation of these standards, though partial (the encoder does not detect which parts of the given text can be left for a traditional 8-bit encoder).
+
+The module is written in JavaScript and requires [Node.js](http://nodejs.org/) to run. (Node.js version 0.10.x or 0.12.x is recommended. The latest stable [io.js](https://iojs.org/) is fine too.)
 
 ## Installing Fiunis
 
