@@ -14,7 +14,7 @@ The module is written in JavaScript and requires [Node.js](http://nodejs.org/
 
 ## Installing Fiunis
 
-[![(npm package version)](https://nodei.co/npm/fiunis.png?downloads=true)](https://npmjs.org/package/fiunis) [![(a histogram of downloads)](https://nodei.co/npm-dl/fiunis.png?months=3)](https://npmjs.org/package/fiunis)
+[![(npm package version)](https://nodei.co/npm/fiunis.png?downloads=true)](https://npmjs.org/package/fiunis) [![(a histogram of downloads)](https://nodei.co/npm-dl/fiunis.png?months=3&height=2)](https://npmjs.org/package/fiunis)
 
 * Latest packaged version: `npm install fiunis`
 
