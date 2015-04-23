@@ -2,8 +2,6 @@
 var assert = require('assert');
 var Fiunis = require('../');
 
-require('iconv-lite').extendNodeEncodings();
-
 var lorem = [
    'Lorem ipsum dolor sit amet, consectetur adipisicing elit, ',
    'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
