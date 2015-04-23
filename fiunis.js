@@ -16,7 +16,9 @@ Fiunis.prototype.decode = function(text){
 };
 
 Fiunis.prototype.encode = function(text, targetEncoding){
-   if( typeof targetEncoding === 'undefined' ){ // encode whole string
+   if( text.length < 1 ) return text;
+
+   if( typeof targetEncoding === 'undefined' ){ // encode the whole string
       var base64string = Buffer(text, 'utf16be').toString('base64');
       while(
          base64string.length > 0 &&
@@ -57,7 +59,6 @@ Fiunis.prototype.encode = function(text, targetEncoding){
          ).map(function(srcLine, srcIDX){
             if( srcIDX % 2 === 0 ){
                // actual non-encodable substring's index: 0, 2, 4...
-               if( srcLine.length < 1 ) return srcLine;
                return _here.encode(srcLine);
             } else {
                // encodable source defaultCharSingleByte index: 1, 3, 5...
