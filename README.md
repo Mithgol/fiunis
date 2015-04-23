@@ -34,18 +34,18 @@ Replaces all occurrences of Fidonet Unicode substrings in the given text by 
 
 For example, `.decode('The video “&+mAJcFlwNbHpOS3p/iTJbUHvH-;” is interesting.')` returns `'The video “頂尖對決之穿褲子篇” is interesting.'`.
 
-### encode(text, encoding)
+### encode(text, [encoding])
 
-This method makes one or more Fidonet Unicode substrings from the given `text`. This method has the two different possible behaviours:
+This method converts the given `text` to Fidonet Unicode substrings (either as a whole or partially). This method has the two different possible behaviours:
 
-* If `encoding` is `undefined`, this method returns a JavaScript **string** with the Fidonet Unicode substring equivalent of the given `text`.
+* If `encoding` is `undefined`, this method returns a JavaScript **string** with the Fidonet Unicode substring equivalent of the whole given `text`.
    * For example, `.encode('頂尖對決之穿褲子篇')` returns `'&+mAJcFlwNbHpOS3p/iTJbUHvH-;'`.
-   * The whole given `text` is converted (including ASCII characters). You should either detect (beforehand) which substrings should be given to this encoder (and what other substrings would be left to a traditional 8-bit encoding) or use the other encoder that decides that automatically (i.e. also give some `encoding` to the method, see below).
+   * The whole given `text` is converted (even its ASCII characters). You should either detect (beforehand) which substrings should be given to this encoder (and what other substrings would be left to a traditional 8-bit encoding) or use some other encoder that decides that automatically. (This method can also decide that, but only if some `encoding` is given, see below.)
 
 * If `encoding` is not `undefined`, this method returns a Node.js **Buffer** with the given `text` converted to the given `encoding`.
-   * If some fragments of the given `text` consist of characters that cannot be represented in the given `encoding`, then Fidonet Unicode substrings are used to encode such fragments.
+   * And if some fragments of the given `text` consist of characters that cannot be represented in the given `encoding`, then Fidonet Unicode substrings are used to encode such fragments.
    * The given `encoding` must be an encoding understood by the [`iconv-lite`](https://github.com/ashtuchkin/iconv-lite) module (otherwise an error is thrown).
-   * The given `encoding` should also be a single-byte encoding (that generates exactly one byte for each of the characters it can represent). Otherwise the behaviour of this method is not reliable. (An error is thrown only if a multi-byte encoding can be detected, i.e. if the Buffer's length is not equal to the text's length.)
+   * The given `encoding` should also be a single-byte encoding (that generates exactly one byte for each of the characters it can represent). Otherwise the behaviour of this method is not reliable. (An error is also thrown, but only if a multi-byte encoding can be detected for certain, i.e. if the resulting Buffer's length is not equal to the text's length even **before** Fidonet Unicode substrings are created.)
 
 ## Testing Fiunis
 
