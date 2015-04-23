@@ -1,5 +1,4 @@
-var iconvLite = require('iconv-lite');
-iconvLite.extendNodeEncodings();
+require('iconv-lite').extendNodeEncodings();
 
 var Fiunis = function(){
    if (!(this instanceof Fiunis)) return new Fiunis();
@@ -30,10 +29,12 @@ Fiunis.prototype.encode = function(text, targetEncoding){
    }
 
    // otherwise detect and render Fidonet Unicode substrings
-   if( !iconvLite.encodingExists(targetEncoding) ){
+   if( !Buffer.isEncoding(targetEncoding) ){
       throw new Error(this.errors.UNKNOWN_ENCODING);
    }
-   if( iconvLite.defaultCharSingleByte !== '?' ){
+   if( Buffer('\uD83D\uDCA9', 'cp866').toString('cp866') !== '??' ){
+      // The Pile of Poo Test™,
+      // see https://mathiasbynens.be/notes/javascript-unicode#poo-test
       throw new Error(this.errors.ICONVLITE_TAINTED);
    }
 

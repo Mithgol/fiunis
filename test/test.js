@@ -69,6 +69,12 @@ describe('the generator of Fidonet Unicode substrings', function(){
          ''
       );
    });
+   it('The Pile of Poo Test™', function(){
+      assert.strictEqual(
+         Fiunis.decode( Fiunis.encode('\uD83D\uDCA9') ),
+         '\uD83D\uDCA9'
+      );
+   });
    it('encodes an example from ashtuchkin/iconv-lite#73 to CP866', function(){
       assert.strictEqual(
          Fiunis.encode('Хлѣбъ です。', 'cp866').toString('cp866'),
