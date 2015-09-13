@@ -10,9 +10,7 @@ This repository does also contain draft standards of **Fidonet Unicode substring
 
 This module is a reference implementation of these standards, though partial (the encoder does not detect which parts of the given text can be left for a traditional 8-bit encoder).
 
-The module is written in JavaScript and requires [Node.js](http://nodejs.org/) to run.
-* Currently only Node.js version 0.10.x or 0.12.x is supported.
-* The latest stable [io.js](https://iojs.org/) or Node v4.0.x are not supported because they are [not backwards-compatible](https://github.com/nodejs/node/issues/2835) with older interfaces currently used by [`iconv-lite`](https://www.npmjs.com/package/iconv-lite).
+The module is written in JavaScript and requires [Node.js](http://nodejs.org/) to run. It is tested against Node.js v0.8.x, Node.js v0.10.x, Node.js v0.12.x, Node.js v4.0.x and the latest stable version of io.js.
 
 ## Installing Fiunis
 
