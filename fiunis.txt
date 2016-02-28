@@ -5,7 +5,7 @@ Status:         draft
 Revision:       draft 2.0
 Title:          Fidonet Unicode substrings
 Author:         Mithgol the Webmaster   (aka Sergey Sokoloff, 2:50/88)
-Revision Date:  29 Jan 2015
+Revision Date:  28 Feb 2016
 -+--------------------------------------------------------------------
 Contents:
    1. Status of this document
@@ -16,6 +16,7 @@ Contents:
    5. Decoding of an 8-bit Fidonet message
       containing Unicode substrings
    6. Important notes
+   Appendix A. Known implementations
 -+--------------------------------------------------------------------
 
 1. Status of this document
@@ -166,6 +167,24 @@ Contents:
        untouched by the decoder for the sake of users of older Fidonet
        message readers (otherwise Fidonet Unicode substrings, encoded
        twice, become even more incomprehensible for them).
+
+Appendix A. Known implementations
+-+-------------------------------
+
+  By the time of this writing there are several implementation of the
+  draft editions of this standard.
+
+  Reference implementation (free open source):
+
+  https://github.com/Mithgol/fiunis
+
+  Applications written by the standard's author:
+
+  *) Fido2RSS https://github.com/Mithgol/fido2rss
+
+  *) PhiDo https://github.com/Mithgol/phido
+
+  *) twi2fido https://github.com/Mithgol/node-twi2fido/
 
 **********************************************************************
 EOTD                                               END OF THE DOCUMENT
