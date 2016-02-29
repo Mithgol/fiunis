@@ -8,7 +8,7 @@ This repository does also contain draft standards of **Fidonet Unicode substring
 
 * The [`fiunis.rus.txt`](fiunis.rus.txt) file is the Russian version of the draft. This version is provided in UTF-8 (for the diffs to look reasonably good on GitHub and other git tools) and thus should be converted to CP866 encoding (common in Russian Fidonet) before posting to Fidonet.
 
-This module is a reference implementation of these standards, though partial (the encoder does not detect which parts of the given text can be left for a traditional 8-bit encoder).
+This module is a reference implementation of these standards.
 
 The module is written in JavaScript and requires [Node.js](http://nodejs.org/) to run. It is tested against Node.js v0.10.x, Node.js v0.12.x, Node.js v4.0.x, Node.js v4.1.x and the latest stable version of io.js.
 
