@@ -1,7 +1,7 @@
 {
 "name": "fiunis",
 "main": "fiunis.js",
-"version": "2.1.3",
+"version": "2.1.4",
 "description": "A decoder and an encoder of Fidonet Unicode substrings.",
 "keywords": [
    "Fidonet", "Fido",
@@ -14,7 +14,7 @@
    "url": "https://github.com/Mithgol/fiunis.git"
 },
 "dependencies": {
-   "iconv-lite": "0.4.11"
+   "iconv-lite": "~0.4.13"
 },
 "scripts": {
    "pretest": "jshint fiunis.js test/",
