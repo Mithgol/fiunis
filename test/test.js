@@ -1,5 +1,6 @@
 /* global describe, it */
 var assert = require('assert');
+var iconv = require('iconv-lite');
 var Fiunis = require('../');
 
 var lorem = [
@@ -75,13 +76,13 @@ describe('the generator of Fidonet Unicode substrings', function(){
    });
    it('encodes an example from ashtuchkin/iconv-lite#73 to CP866', function(){
       assert.strictEqual(
-         Fiunis.encode('Хлѣбъ です。', 'cp866').toString('cp866'),
+         iconv.decode( Fiunis.encode('Хлѣбъ です。', 'cp866'), 'cp866' ),
          'Хл' + Fiunis.encode('ѣ') + 'бъ ' + Fiunis.encode('です。')
       );
    });
    it('encodes an example from ashtuchkin/iconv-lite#73 to CP437', function(){
       assert.strictEqual(
-         Fiunis.encode('Хлѣбъ です。', 'cp437').toString('cp437'),
+         iconv.decode( Fiunis.encode('Хлѣбъ です。', 'cp437'), 'cp437' ),
          Fiunis.encode('Хлѣбъ') + ' ' + Fiunis.encode('です。')
       );
    });
