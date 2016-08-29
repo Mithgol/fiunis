@@ -5,7 +5,7 @@ FGHI                                FIDONET GLOBAL HYPERTEXT INTERFACE
 Номер редакции: черновик 2.0
 Заглавие:       Фидонетовские подстроки Unicode
 Автор:          Mithgol the Webmaster   (aka Sergey Sokoloff, 2:50/88)
-Дата редакции:  28 Feb 2016
+Дата редакции:  29 Aug 2016
 -+--------------------------------------------------------------------
 Содержание:
    1. Статус этого документа
@@ -204,7 +204,7 @@ FGHI                                FIDONET GLOBAL HYPERTEXT INTERFACE
 
   https://github.com/Mithgol/fiunis
 
-  Приложения, написанные автором стандарта:
+  Реализации на уровне приложений, написанных автором стандарта:
 
   *) Fido2RSS https://github.com/Mithgol/fido2rss
 
