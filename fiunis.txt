@@ -5,7 +5,7 @@ Status:         draft
 Revision:       draft 2.0
 Title:          Fidonet Unicode substrings
 Author:         Mithgol the Webmaster   (aka Sergey Sokoloff, 2:50/88)
-Revision Date:  9 Jan 2017
+Revision Date:  21 Feb 2017
 -+--------------------------------------------------------------------
 Contents:
    1. Status of this document
@@ -67,6 +67,16 @@ Contents:
      unintelligible, but that's natural for an 8-bit application,
      and brings only a minor discomfort, and serves as a reason
      for an upgrade.
+
+  Additionally it becomes possible to continue writing the messages'
+  subject lines mostly in some older (8-bit) encodings (where "mostly"
+  means "for the characters supported by those encodings"). That
+  possibility is benefitial for some scripts (such as Cyrillic or
+  Greek) where most characters require 8 bits in their 8-bit encoding
+  but 16 bits in UTF-8 (or in UTF-16) and therefore the limits of the
+  message's subject's length (imposed by Fidonet packet standards and
+  also by some message bases' design), which are usually given in
+  bytes, become twice as worse (character-wise) for Unicode subjects.
 
 3. Key words to indicate requirement levels
 -+-----------------------------------------
