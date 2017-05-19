@@ -2,10 +2,10 @@
 FGHI                                FIDONET GLOBAL HYPERTEXT INTERFACE
 **********************************************************************
 Status:         draft
-Revision:       draft 2.0
+Revision:       draft 2.1
 Title:          Fidonet Unicode substrings
 Author:         Mithgol the Webmaster   (aka Sergey Sokoloff, 2:50/88)
-Revision Date:  21 Feb 2017
+Revision Date:  19 May 2017
 -+--------------------------------------------------------------------
 Contents:
    1. Status of this document
@@ -162,7 +162,7 @@ Contents:
 
   Note 2. Fidonet Unicode substrings MAY appear in source message even
   before it is encoded (for example, when Fidonet Unicode substrings
-  are discussed). An encoder of Fidonet Unicode substrings SHOULD be
+  are discussed). An encoder of Fidonet Unicode substrings MAY be
   applied to them (so that their original form is restored after the
   decoding; otherwise such substrings would be decoded to their
   Unicode equivalents). Keep in mind the following:
@@ -177,6 +177,11 @@ Contents:
        untouched by the decoder for the sake of users of older Fidonet
        message readers (otherwise Fidonet Unicode substrings, encoded
        twice, become even more incomprehensible for them).
+
+  2.3) The original form of Fidonet Unicode substrings MAY be restored
+       by some other means in the future (for example, a "View Source"
+       feature). Of course, the "double encoding" discussed above
+       becomes unnecessary when such other means are commonplace.
 
 Appendix A. Known implementations
 -+-------------------------------
