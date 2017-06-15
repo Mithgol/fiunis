@@ -1,7 +1,7 @@
 {
 "name": "fiunis",
 "main": "fiunis.js",
-"version": "2.1.4",
+"version": "3.0.0",
 "description": "A decoder and an encoder of Fidonet Unicode substrings.",
 "keywords": [
    "Fidonet", "Fido",

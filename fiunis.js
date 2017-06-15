@@ -5,7 +5,7 @@ var Fiunis = function(){
 };
 
 Fiunis.prototype.decode = function(text){
-   return text.split( /(&\+[A-Za-z0-9+/]+-;)/ ).map(function(fragment, idx){
+   return text.split( /(&\+[A-Za-z0-9+/]+-;)/ ).map((fragment, idx) => {
       if( idx % 2 === 0 ){ // simple string fragment's index: 0, 2, 4...
          return fragment;
       } else return iconv.decode( // regex-captured fragment's index: 1, 3...
@@ -58,14 +58,14 @@ Fiunis.prototype.encode = function(text, targetEncoding){
    var _here = this;
    var remainingStr = text;
    var collected = [];
-   zebra.forEach(function(zebraLine, IDX){
+   zebra.forEach((zebraLine, IDX) => {
       if( IDX % 2 === 0 ){ // encodable substring's index: 0, 2, 4...
          collected = collected.concat([zebraLine]);
          remainingStr = remainingStr.slice(zebraLine.length);
       } else { // non-encodable substring's index: 1, 3, 5...
          var srcZebra = remainingStr.slice(0, zebraLine.length).split(
             /(\?+)/
-         ).map(function(srcLine, srcIDX){
+         ).map((srcLine, srcIDX) => {
             if( srcIDX % 2 === 0 ){
                // actual non-encodable substring's index: 0, 2, 4...
                return _here.encode(srcLine);
